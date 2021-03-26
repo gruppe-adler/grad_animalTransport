@@ -2,7 +2,7 @@
 
 if (isNil QGVAR(supportedContainerConfigs)) then {
     private _configArrays = [configFile, missionConfigFile] apply {
-            "(!(configName _x isKindOf 'Animal')) && (!(isNull (_x >> 'GRAD_AnimalTransport')))" configClasses (_x >> "CfgVehicles");
+            "true" configClasses (_x >> "GRAD_animalTransport" >> "Vehicles");
     };
 
     GVAR(supportedContainerConfigs) = (_configArrays#0 + _configArrays#1);

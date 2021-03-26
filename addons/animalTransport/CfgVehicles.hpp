@@ -1,10 +1,6 @@
 class CfgVehicles {
     class Animal_Base_F;
     class Sheep_random_F: Animal_Base_F {
-        class GRAD_AnimalTransport {
-            stop = "Sheep_Stop";
-            default = "Sheep_Idle_Stop";
-        };
         class ACE_Actions {
             class ACE_MainActions {
                 displayName = "Interactions";
@@ -29,96 +25,99 @@ class CfgVehicles {
         ACE_dragging_carryPosition[] = {-0.5, 0.6, 0.5};
         ACE_dragging_carryDirection = 90;
     };
+};
 
-    class Van_01_base_F;
-    class Van_01_transport_base_F: Van_01_base_F {
-		class GRAD_AnimalTransport {
-            unloadPoint[] = {0, -4.2, -0.6};
-            unloadActionPoint[] = {0, -3.4, -0.4};
-            class Sheep_random_F {
-                class Spaces {
-                    class FrontOuterLeft {
-                        offset[] = {-0.7, -1.4, -0.6};
-                        cargoIndices[] = {2, 4};
-                    };
-                    class FrontInnerLeft {
-                        offset[] = {-0.25, -1.6, -0.6};
-                        cargoIndices[] = {2, 4};
-                    };
-                    class FrontInnerRight {
-                        offset[] = {0.2, -1.4, -0.6};
-                        cargoIndices[] = {3, 5};
-                    };
-                    class FrontOuterRight {
-                        offset[] = { 0.65, -1.6, -0.6};
-                        cargoIndices[] = {3, 5};
-                    };
-                    class BackOuterRight {
-                        offset[] = { 0.7, -3.0, -0.6};
-                        cargoIndices[] = {7, 9,11};
-                    };
-                    class BackInnerRight {
-                        offset[] = { 0.25, -2.8, -0.6};
-                        cargoIndices[] = {7, 9,11};
-                    };
-                    class BackInnerLeft {
-                        offset[] = { -0.2, -3.0, -0.6};
-                        cargoIndices[] = {6, 8, 10};
-                    };
-                    class BackOuterLeft {
-                        offset[] = { -0.65, -2.8, -0.6};
-                        cargoIndices[] = {6, 8, 10};
-                    };
-                };
-            };
-        };
-	};
-    class I_G_Van_01_transport_F: Van_01_base_F {
-        class GRAD_AnimalTransport { /* NOTE: same as Van_01_transport_base_F above! */
-            unloadPoint[] = {0, -4.2, -0.6};
-            unloadActionPoint[] = {0, -3.4, -0.4};
-            class Sheep_random_F {
-                class Spaces {
-                    class FrontOuterLeft {
-                        offset[] = {-0.7, -1.4, -0.6};
-                        cargoIndices[] = {2, 4};
-                    };
-                    class FrontInnerLeft {
-                        offset[] = {-0.25, -1.6, -0.6};
-                        cargoIndices[] = {2, 4};
-                    };
-                    class FrontInnerRight {
-                        offset[] = {0.2, -1.4, -0.6};
-                        cargoIndices[] = {3, 5};
-                    };
-                    class FrontOuterRight {
-                        offset[] = { 0.65, -1.6, -0.6};
-                        cargoIndices[] = {3, 5};
-                    };
-                    class BackOuterRight {
-                        offset[] = { 0.7, -3.0, -0.6};
-                        cargoIndices[] = {7, 9,11};
-                    };
-                    class BackInnerRight {
-                        offset[] = { 0.25, -2.8, -0.6};
-                        cargoIndices[] = {7, 9,11};
-                    };
-                    class BackInnerLeft {
-                        offset[] = { -0.2, -3.0, -0.6};
-                        cargoIndices[] = {6, 8, 10};
-                    };
-                    class BackOuterLeft {
-                        offset[] = { -0.65, -2.8, -0.6};
-                        cargoIndices[] = {6, 8, 10};
-                    };
-                };
-            };
+class GRAD_AnimalTransport {
+    class Animals {
+        class Sheep_random_F {
+            stop = "Sheep_Stop";
+            default = "Sheep_Idle_Stop";
         };
     };
+    class Vehicles {
+        class Van_01_transport_base_F {
+            unloadPoint[] = {0, -4.2, -0.6};
+            unloadActionPoint[] = {0, -3.4, -0.4};
+            class Sheep_random_F {
+                class Spaces {
+                    class FrontOuterLeft {
+                        offset[] = {-0.7, -1.4, -0.6};
+                        cargoIndices[] = {2, 4};
+                    };
+                    class FrontInnerLeft {
+                        offset[] = {-0.25, -1.6, -0.6};
+                        cargoIndices[] = {2, 4};
+                    };
+                    class FrontInnerRight {
+                        offset[] = {0.2, -1.4, -0.6};
+                        cargoIndices[] = {3, 5};
+                    };
+                    class FrontOuterRight {
+                        offset[] = { 0.65, -1.6, -0.6};
+                        cargoIndices[] = {3, 5};
+                    };
+                    class BackOuterRight {
+                        offset[] = { 0.7, -3.0, -0.6};
+                        cargoIndices[] = {7, 9,11};
+                    };
+                    class BackInnerRight {
+                        offset[] = { 0.25, -2.8, -0.6};
+                        cargoIndices[] = {7, 9,11};
+                    };
+                    class BackInnerLeft {
+                        offset[] = { -0.2, -3.0, -0.6};
+                        cargoIndices[] = {6, 8, 10};
+                    };
+                    class BackOuterLeft {
+                        offset[] = { -0.65, -2.8, -0.6};
+                        cargoIndices[] = {6, 8, 10};
+                    };
+                };
+            };
+        };
 
-    class RHS_Ural_Base;
-    class RHS_Ural_Civ_Base: RHS_Ural_Base {
-		class GRAD_AnimalTransport {
+        class I_G_Van_01_transport_F { /* NOTE: same as Van_01_transport_base_F above! */
+            unloadPoint[] = {0, -4.2, -0.6};
+            unloadActionPoint[] = {0, -3.4, -0.4};
+            class Sheep_random_F {
+                class Spaces {
+                    class FrontOuterLeft {
+                        offset[] = {-0.7, -1.4, -0.6};
+                        cargoIndices[] = {2, 4};
+                    };
+                    class FrontInnerLeft {
+                        offset[] = {-0.25, -1.6, -0.6};
+                        cargoIndices[] = {2, 4};
+                    };
+                    class FrontInnerRight {
+                        offset[] = {0.2, -1.4, -0.6};
+                        cargoIndices[] = {3, 5};
+                    };
+                    class FrontOuterRight {
+                        offset[] = { 0.65, -1.6, -0.6};
+                        cargoIndices[] = {3, 5};
+                    };
+                    class BackOuterRight {
+                        offset[] = { 0.7, -3.0, -0.6};
+                        cargoIndices[] = {7, 9,11};
+                    };
+                    class BackInnerRight {
+                        offset[] = { 0.25, -2.8, -0.6};
+                        cargoIndices[] = {7, 9,11};
+                    };
+                    class BackInnerLeft {
+                        offset[] = { -0.2, -3.0, -0.6};
+                        cargoIndices[] = {6, 8, 10};
+                    };
+                    class BackOuterLeft {
+                        offset[] = { -0.65, -2.8, -0.6};
+                        cargoIndices[] = {6, 8, 10};
+                    };
+                };
+            };
+        };
+
+        class RHS_Ural_Civ_Base {
             unloadPoint[] = {0, -4.1, -0.2};
             unloadActionPoint[] = {0, -3.3, -0.1};
             class Sheep_random_F {
@@ -160,10 +159,8 @@ class CfgVehicles {
                 };
             };
         };
-    };
-    class rhs_gaz66_vmf;
-    class rhs_gaz66o_vmf: rhs_gaz66_vmf {
-        class GRAD_AnimalTransport {
+
+        class rhs_gaz66o_vmf {
             unloadPoint[] = {0, -3.4, -0.6};
             unloadActionPoint[] = {0, -2.6, -0.4};
             class Sheep_random_F {
@@ -195,10 +192,7 @@ class CfgVehicles {
                 };
             };
         };
-    };
-    class rhs_zil131_open_base;
-    class rhs_zil131_flatbed_base: rhs_zil131_open_base {
-        class GRAD_AnimalTransport {
+        class rhs_zil131_flatbed_base {
             unloadPoint[] = {0, -3.4, -0.6};
             unloadActionPoint[] = {0, -2.6, -0.4};
             class Sheep_random_F {
@@ -245,10 +239,7 @@ class CfgVehicles {
                 };
             };
         };
-    };
-    class Truck_02_base_F;
-    class Truck_02_transport_base_F: Truck_02_base_F { /*Zamak open with benches*/
-        class GRAD_AnimalTransport {
+        class Truck_02_transport_base_F { /*Zamak open with benches*/
             unloadPoint[] = {0, -4.3, -0.2};
             unloadActionPoint[] = {0, -3.5, -0.1};
             class Sheep_random_F {
@@ -299,10 +290,7 @@ class CfgVehicles {
                 };
             };
         };
-    };
-    class Car_F;
-    class Quadbike_01_base_F: Car_F {
-        class GRAD_AnimalTransport {
+        class Quadbike_01_base_F {
             unloadPoint[] = {0, -1.4, -0.2};
             unloadActionPoint[] = {0, -1.0, -0.3};
             class Sheep_random_F {
