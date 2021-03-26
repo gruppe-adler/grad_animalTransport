@@ -5,7 +5,7 @@ LOG("postClientInit");
 if (!hasInterface) exitWith {};
 
 {
-    private _unloadActionPoint = ([_x >> "GRAD_AnimalTransport", "unloadActionPoint", [0, 0, 0]] call BIS_fnc_returnConfigEntry);
+    private _unloadActionPoint = ([_x, "unloadActionPoint", [0, 0, 0]] call BIS_fnc_returnConfigEntry);
     private _positionedUnloadAction = [
         QGVAR(unloadAction),
         "unload animals",
