@@ -8,9 +8,7 @@ class CfgPatches {
 		requiredAddons[] = {
 			"grad_main",
 			"ace_dragging",
-			"a3_animals_f_beta_sheep",
-			"rhs_c_trucks",
-			"rhs_c_zil131"
+			"a3_animals_f_beta_sheep"
 		};
 		units[] = {};
 		weapons[] = {};
