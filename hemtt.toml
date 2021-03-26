@@ -1,0 +1,25 @@
+name = "GRAD Animal Transport"
+modname = "grad_animalTransport"
+prefix = "grad"
+author = "Gruppe Adler"
+files = [
+    "Adler_64.paa",
+    "Adler_w_64.paa",
+    "Adler_w_2.paa",
+    "mod.cpp",
+    "LICENSE",
+    "README.md"
+]
+include = [
+    "./include"
+]
+
+key_name = "{{prefix}}_{{version}}"
+authority = "{{prefix}}_{{version}}-{{git \"id 8\"}}"
+
+releasebuild = [
+    "@zip grad_animalTransport_{{semver.major}}.{{semver.minor}}.{{semver.patch}}"
+]
+
+[header_exts]
+version= "{{git \"id 8\"}}"
