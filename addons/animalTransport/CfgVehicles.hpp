@@ -1,10 +1,6 @@
 class CfgVehicles {
     class Animal_Base_F;
     class Sheep_random_F: Animal_Base_F {
-        class GRAD_AnimalTransport {
-            stop = "Sheep_Stop";
-            default = "Sheep_Idle_Stop";
-        };
         class ACE_Actions {
             class ACE_MainActions {
                 displayName = "Interactions";
@@ -32,6 +28,12 @@ class CfgVehicles {
 };
 
 class GRAD_AnimalTransport {
+    class Animals {
+        class Sheep_random_F {
+            stop = "Sheep_Stop";
+            default = "Sheep_Idle_Stop";
+        };
+    };
     class Vehicles {
         class Van_01_transport_base_F {
             unloadPoint[] = {0, -4.2, -0.6};
@@ -73,7 +75,7 @@ class GRAD_AnimalTransport {
                 };
             };
         };
-	
+
         class I_G_Van_01_transport_F { /* NOTE: same as Van_01_transport_base_F above! */
             unloadPoint[] = {0, -4.2, -0.6};
             unloadActionPoint[] = {0, -3.4, -0.4};
