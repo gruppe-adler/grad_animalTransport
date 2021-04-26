@@ -308,5 +308,11 @@ class GRAD_AnimalTransport {
                 };
             };
         };
+
+        // datsun & hilux: 
+
+            // [-0.4, -0.4, -0.7]]; s setDir 90
+            // [0.4, -1.8, -0.7]]; s2 setDir 270
+            // [0.3, -0.9, -0.7]]; s3 setDir 225
     };
 };
