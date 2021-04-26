@@ -159,6 +159,7 @@ class GRAD_AnimalTransport {
                 };
             };
         };
+        class RHS_Ural_Civ_Base: RHS_Ural_Civ_Base {};
 
         class rhs_gaz66o_vmf {
             unloadPoint[] = {0, -3.4, -0.6};
