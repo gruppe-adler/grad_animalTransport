@@ -309,10 +309,32 @@ class GRAD_AnimalTransport {
             };
         };
 
-        // datsun & hilux: 
+        class UK3CB_Hilux_Open {
+            unloadPoint[] = {0, -3.3, -0.2};
+            unloadActionPoint[] = {0, -2.4, -0.1};
+            class Sheep_random_F {
+                class Spaces {
+                    class Front  {
+                        offset[] = {-0.4, -0.4, -0.7};
+                        dir = 90;
+                        cargoIndices[] = {5};
+                    };
+                    class Center  {
+                        offset[] = {-0.3, -0.7, -0.7};
+                        dir = 135;
+                        cargoIndices[] = {};
+                    };
+                    class Back {
+                        offset[] = {0.4, -1.8, -0.7};
+                        dir = 270;
+                        cargoIndices[] = {3, 4};
+                    };
+                };
+            };
+        };
+        class UK3CB_Datsun_Open: UK3CB_Hilux_Open {};
 
-            // [-0.4, -0.4, -0.7]]; s setDir 90
-            // [0.4, -1.8, -0.7]]; s2 setDir 270
-            // [0.3, -0.9, -0.7]]; s3 setDir 225
+        class UK3CB_V3S_Open: RHS_Ural_Civ_Base {};
+        class UK3CB_UN_I_Ural_Open: RHS_Ural_Civ_Base {};
     };
 };
