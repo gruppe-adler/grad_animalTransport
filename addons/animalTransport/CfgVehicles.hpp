@@ -76,46 +76,7 @@ class GRAD_AnimalTransport {
             };
         };
 
-        class I_G_Van_01_transport_F { /* NOTE: same as Van_01_transport_base_F above! */
-            unloadPoint[] = {0, -4.2, -0.6};
-            unloadActionPoint[] = {0, -3.4, -0.4};
-            class Sheep_random_F {
-                class Spaces {
-                    class FrontOuterLeft {
-                        offset[] = {-0.7, -1.4, -0.6};
-                        cargoIndices[] = {2, 4};
-                    };
-                    class FrontInnerLeft {
-                        offset[] = {-0.25, -1.6, -0.6};
-                        cargoIndices[] = {2, 4};
-                    };
-                    class FrontInnerRight {
-                        offset[] = {0.2, -1.4, -0.6};
-                        cargoIndices[] = {3, 5};
-                    };
-                    class FrontOuterRight {
-                        offset[] = { 0.65, -1.6, -0.6};
-                        cargoIndices[] = {3, 5};
-                    };
-                    class BackOuterRight {
-                        offset[] = { 0.7, -3.0, -0.6};
-                        cargoIndices[] = {7, 9,11};
-                    };
-                    class BackInnerRight {
-                        offset[] = { 0.25, -2.8, -0.6};
-                        cargoIndices[] = {7, 9,11};
-                    };
-                    class BackInnerLeft {
-                        offset[] = { -0.2, -3.0, -0.6};
-                        cargoIndices[] = {6, 8, 10};
-                    };
-                    class BackOuterLeft {
-                        offset[] = { -0.65, -2.8, -0.6};
-                        cargoIndices[] = {6, 8, 10};
-                    };
-                };
-            };
-        };
+        class I_G_Van_01_transport_F: Van_01_transport_base_F {};
 
         class RHS_Ural_Civ_Base {
             unloadPoint[] = {0, -4.1, -0.2};
@@ -334,7 +295,114 @@ class GRAD_AnimalTransport {
         };
         class UK3CB_Datsun_Open: UK3CB_Hilux_Open {};
 
-        class UK3CB_V3S_Open: RHS_Ural_Civ_Base {};
         class UK3CB_UN_I_Ural_Open: RHS_Ural_Civ_Base {};
+
+        class UK3CB_V3S_Open {
+            unloadPoint[] = {0, -4.1, -0.7};
+            unloadActionPoint[] = {0, -3.3, -0.7};
+            class Sheep_random_F {
+                class Spaces {
+                    class First {
+                        offset[] = {-0.4, 0.5, -.7};
+                        dir = 90;
+                        cargoIndices[] = {9, 10}; //yes! frontmost seats are 9,10!
+                    };
+                    class Second {
+                        offset[] = {0.4, 0, -.7};
+                        dir = 270;
+                        cargoIndices[] = {1, 2};
+                    };
+                    class Third {
+                        offset[] = {-0.4, -0.5, -.7};
+                        dir = 90;
+                        cargoIndices[] = {1, 2};
+                    };
+                    class Fourth {
+                        offset[] = {0.4, -1, -.7};
+                        dir = 270;
+                        cargoIndices[] = {3, 4};
+                    };
+                    class Fifth {
+                        offset[] = {-0.4, -1.5, -.7};
+                        dir = 90;
+                        cargoIndices[] = {5, 6};
+                    };
+                    class Sixth {
+                        offset[] = {0.4, -2, -.7};
+                        dir = 270;
+                        cargoIndices[] = {};
+                    };
+                    class Seventh {
+                        offset[] = {-0.4, -2.5, -.7};
+                        dir = 90;
+                        cargoIndices[] = {7, 8};
+                    };
+                    class Eighth {
+                        offset[] = {0.4, -3, -.7};
+                        dir = 270;
+                        cargoIndices[] = {11, 12};
+                    };
+                };
+            };
+
+        };
+
+    class UK3CB_C_LandRover_Open {
+            class Sheep_Random_F {
+                unloadPoint[] = {0, -2, -0.7};
+                unloadActionPoint[] = {0, -1.4, 0};
+                class Spaces {
+                    class Front {
+                        offset[] = {0.05, -0.8, -.7};
+                        dir = -8;
+                        cargoIndices[] = {2, 3, 4, 5};
+                    };
+                    class Back {
+                        offset[] = {-0.05, -1.2, -.7};
+                        dir = 172;
+                        cargoIndices[] = {0, 1, 4, 5};
+                    };
+                };
+
+            };
+        };
+
+        class UK3CB_TKC_I_S1203 {
+            class Sheep_Random_F {
+                unloadPoint[] = {0, -1.6, -0.7};
+                unloadActionPoint[] = {0, -1.0, -0.1};
+                class Spaces {
+                    class Left {
+                        offset[] = {0.45, -0.2, -0.7};
+                        dir = 180;
+                        cargoIndices[] = {3};
+                    };
+                    class Center {
+                        offset[] = {0, -0.2, -0.7};
+                        dir = 180;
+                        cargoIndices[] = {3, 4};
+                    };
+                    class Right {
+                        offset[] = {-0.45, -0.2, -0.7};
+                        dir = 180;
+                        cargoIndices[] = {4};
+                    };
+                };
+            };
+        };
+
+        class UK3CB_TKC_I_UAZ_Open {
+            unloadPoint[] = {0, -2.1, 0};
+            unloadActionPoint[] = {0, -1.4, 0};
+            class Sheep_Random_F {
+                class Spaces {
+                    class Front {
+                        offset[] = {-0.55, -0.2, -0.7};
+                        dir = 90;
+                        cargoIndices[] = {1, 3, 4};
+                    };
+                };
+            };
+        };
     };
 };
