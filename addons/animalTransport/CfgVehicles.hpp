@@ -348,9 +348,9 @@ class GRAD_AnimalTransport {
         };
 
     class UK3CB_C_LandRover_Open {
+            unloadPoint[] = {0, -2.6, -0.7};
+            unloadActionPoint[] = {0, -2.1, -0.3};
             class Sheep_Random_F {
-                unloadPoint[] = {0, -2, -0.7};
-                unloadActionPoint[] = {0, -1.4, 0};
                 class Spaces {
                     class Front {
                         offset[] = {0.05, -0.8, -.7};
@@ -368,12 +368,12 @@ class GRAD_AnimalTransport {
         };
 
         class UK3CB_TKC_I_S1203 {
+            unloadPoint[] = {0, -2.0, -0.7};
+            unloadActionPoint[] = {0, -1.4, -0.1};
             class Sheep_Random_F {
-                unloadPoint[] = {0, -1.6, -0.7};
-                unloadActionPoint[] = {0, -1.0, -0.1};
                 class Spaces {
                     class Left {
-                        offset[] = {0.45, -0.2, -0.7};
+                        offset[] = {-0.45, -0.2, -0.7};
                         dir = 180;
                         cargoIndices[] = {3};
                     };
@@ -383,7 +383,7 @@ class GRAD_AnimalTransport {
                         cargoIndices[] = {3, 4};
                     };
                     class Right {
-                        offset[] = {-0.45, -0.2, -0.7};
+                        offset[] = {0.45, -0.2, -0.7};
                         dir = 180;
                         cargoIndices[] = {4};
                     };
@@ -392,14 +392,128 @@ class GRAD_AnimalTransport {
         };
 
         class UK3CB_TKC_I_UAZ_Open {
-            unloadPoint[] = {0, -2.1, 0};
-            unloadActionPoint[] = {0, -1.4, 0};
+            unloadPoint[] = {0, -2.2, 0};
+            unloadActionPoint[] = {0, -1.6, 0};
             class Sheep_Random_F {
                 class Spaces {
                     class Front {
                         offset[] = {-0.55, -0.2, -0.7};
                         dir = 90;
                         cargoIndices[] = {1, 3, 4};
+                    };
+                };
+            };
+        };
+
+
+        class UK3CB_TKM_I_V3S_Recovery {
+            unloadPoint[] = {0, -4.3, -0.6};
+            unloadActionPoint[] = {0, -3.7, -0.3};
+            class Sheep_Random_F {
+                class Spaces {
+                    class Left1 {
+                        offset[] = { 0.55, 1.2, -.6 };
+                        dir = 90;
+                    };
+                    class Right1 {
+                        offset[] = {-0.55, 1.2, -.6 };
+                        dir = 270;
+                    };
+                    class Left2 {
+                        offset[] = { 0.55, 0.75, -.6 };
+                        dir = 90;
+                    };
+                    class Right2 {
+                        offset[] = {-0.55, 0.75, -.6 };
+                        dir = 270;
+                    };
+                    class Left3 {
+                        offset[] = { 0.55, 0.3, -.6 };
+                        dir = 90;
+                    };
+                    class Right3 {
+                        offset[] = {-0.55, 0.3, -.6 };
+                        dir = 270;
+                    };
+                    class Left4 {
+                        offset[] = { 0.55, -0.15, -.6 };
+                        dir = 90;
+                    };
+                    class Right4 {
+                        offset[] = {-0.55, -0.15, -.6 };
+                        dir = 270;
+                    };
+                    class Left5 {
+                        offset[] = { 0.55, -0.6, -.6 };
+                        dir = 90;
+                    };
+                    class Right5 {
+                        offset[] = {-0.55, -0.6, -.6 };
+                        dir = 270;
+                    };
+                    class Left6 {
+                        offset[] = { 0.55, -1.05, -.6 };
+                        dir = 90;
+                    };
+                    class Right6 {
+                        offset[] = {-0.55, -1.05, -.6 };
+                        dir = 270;
+                    };
+                    class Left7 {
+                        offset[] = { 0.55, -1.5, -.6 };
+                        dir = 90;
+                    };
+                    class Right7 {
+                        offset[] = {-0.55, -1.5, -.6 };
+                        dir = 270;
+                    };
+                    class Left8 {
+                        offset[] = { 0.55, -1.95, -.6 };
+                        dir = 90;
+                    };
+                    class Right8 {
+                        offset[] = {-0.55, -1.95, -.6 };
+                        dir = 270;
+                    };
+                    class Left9 {
+                        offset[] = { 0.55, -2.4, -.6 };
+                        dir = 90;
+                    };
+                    class Right9 {
+                        offset[] = {-0.55, -2.4, -.6 };
+                        dir = 270;
+                    };
+                    class Left10 {
+                        offset[] = { 0.55, -2.85, -.6 };
+                        dir = 90;
+                    };
+                    class Right10 {
+                        offset[] = {-0.55, -2.85, -.6 };
+                        dir = 270;
+                    };
+                    class Left11 {
+                        offset[] = { 0.55, -3.3, -.6 };
+                        dir = 90;
+                    };
+                    class Right11 {
+                        offset[] = {-0.55, -3.3, -.6 };
+                        dir = 270;
+                    };
+                    class Center1 {
+                        offset[] = { 0, 0.5, -.6 };
+                        dir = 0;
+                    };
+                    class Center2 {
+                        offset[] = { 0, -0.9, -.6 };
+                        dir = 0;
+                    };
+                    class Center3 {
+                        offset[] = { 0, -1.3, -.6 };
+                        dir = 180;
+                    };
+                    class Center4 {
+                        offset[] = { 0, -2.8, -.6 };
+                        dir = 180;
                     };
                 };
             };
