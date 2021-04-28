@@ -19,7 +19,7 @@ private _vehicleConfig = configOf _vehicle;
 private _animalTransportConfig = _vehicleConfig call _getAnimalTransportConfig;
 while {isNull _animalTransportConfig && !(isNull _vehicleConfig)} do {
     _vehicleConfig = inheritsFrom _vehicleConfig;
-    if (isNull _vehicleConfig) exitWith {cfgNull};
+    if (isNull _vehicleConfig) exitWith {configNull};
     _animalTransportConfig = _vehicleConfig call _getAnimalTransportConfig;
 };
 _animalTransportConfig
