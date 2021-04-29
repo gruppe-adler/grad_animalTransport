@@ -347,7 +347,7 @@ class GRAD_AnimalTransport {
 
         };
 
-    class UK3CB_C_LandRover_Open {
+    class UK3CB_LandRover { /*note: base classes of the armed variants do have the armament in the class name*/
             unloadPoint[] = {0, -2.6, -0.7};
             unloadActionPoint[] = {0, -2.1, -0.3};
             class Sheep_Random_F {
@@ -367,7 +367,7 @@ class GRAD_AnimalTransport {
             };
         };
 
-        class UK3CB_TKC_I_S1203 {
+        class UK3CB_S1203 {
             unloadPoint[] = {0, -2.0, -0.7};
             unloadActionPoint[] = {0, -1.4, -0.1};
             class Sheep_Random_F {
@@ -391,7 +391,27 @@ class GRAD_AnimalTransport {
             };
         };
 
-        class UK3CB_TKC_I_UAZ_Open {
+        class UK3CB_S1203_Ambulance {
+            unloadPoint[] = {0, -2.0, -0.7};
+            unloadActionPoint[] = {0, -1.4, -0.1};
+            class Sheep_Random_F {
+                class Spaces {
+                    class Left {
+                        offset[] = {-0.2, -1, -0.35};
+                        dir[] = {{0,1,0}, {1,0,0}};
+                        cargoIndices[] = {2};
+                    };
+                    class Right {
+                        offset[] = {0.2, -1, -0.35};
+                        dir[] = {{0,1,0}, {-1,0,0}};
+                        cargoIndices[] = {1};
+                    };
+                };
+            };
+        };
+
+        class RHS_UAZ_Open_Base {
+        // class UK3CB_UAZ_Open_Base {
             unloadPoint[] = {0, -2.2, 0};
             unloadActionPoint[] = {0, -1.6, 0};
             class Sheep_Random_F {
@@ -406,7 +426,7 @@ class GRAD_AnimalTransport {
         };
 
 
-        class UK3CB_TKM_I_V3S_Recovery {
+        class UK3CB_V3S_Recovery {
             unloadPoint[] = {0, -4.3, -0.6};
             unloadActionPoint[] = {0, -3.7, -0.3};
             class Sheep_Random_F {
