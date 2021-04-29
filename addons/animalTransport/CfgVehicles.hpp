@@ -201,9 +201,9 @@ class GRAD_AnimalTransport {
                 };
             };
         };
-        class Truck_02_transport_base_F { /*Zamak open with benches*/
+        class Truck_02_transport_base_F { /*Zamak/Kamaz open with benches*/
             unloadPoint[] = {0, -4.3, -0.2};
-            unloadActionPoint[] = {0, -3.5, -0.1};
+            unloadActionPoint[] = {0, -3.6, -0.2};
             class Sheep_random_F {
                 class Spaces {
                     class FrontCenter  {
@@ -295,7 +295,7 @@ class GRAD_AnimalTransport {
         };
         class UK3CB_Datsun_Open: UK3CB_Hilux_Open {};
 
-        class UK3CB_UN_I_Ural_Open: RHS_Ural_Civ_Base {};
+        // class UK3CB_UN_I_Ural_Open: RHS_Ural_Civ_Base {}; // TODO
 
         class UK3CB_V3S_Open {
             unloadPoint[] = {0, -4.1, -0.7};
@@ -369,7 +369,7 @@ class GRAD_AnimalTransport {
 
         class UK3CB_S1203 {
             unloadPoint[] = {0, -2.0, -0.7};
-            unloadActionPoint[] = {0, -1.4, -0.1};
+            unloadActionPoint[] = {0, -1.6, -0.1};
             class Sheep_Random_F {
                 class Spaces {
                     class Left {
@@ -393,7 +393,7 @@ class GRAD_AnimalTransport {
 
         class UK3CB_S1203_Ambulance {
             unloadPoint[] = {0, -2.0, -0.7};
-            unloadActionPoint[] = {0, -1.4, -0.1};
+            unloadActionPoint[] = {0, -1.6, -0.1};
             class Sheep_Random_F {
                 class Spaces {
                     class Left {

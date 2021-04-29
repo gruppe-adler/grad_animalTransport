@@ -90,13 +90,20 @@ mission_printParents = {
 	diag_log _str;
 };
 
-player addAction ["mark unload action & points", {
+markunloadactionID = player addAction ["mark unload action & points", {
+	player removeAction markunloadactionID;
 	{
 		private _car = _x;
 
 		private _sphere = createSimpleObject ["Sign_Sphere25cm_F", [0, 0, 0], true];
-		private _offset = [0, 0, 0]; // TODO get actionPoint
-		_sphere attachTo [_car, _offset, ""]
-	} forEach (vehicles select {_x isKindOf "Car"});
+		private _cfg = [_car] call grad_animalTransport_fnc_getCustomConfig;
+		if (isNull _cfg) then {
+			diag_log format ["no custom config for %1", typeOf _car];
+		} else {
+			diag_log format ["attaching helper sphere to %1", typeOf _car];
+			private _offset = getArray (_cfg >> "unloadActionPoint");
+			_sphere attachTo [_car, _offset];
+		};
 
+	} forEach (vehicles select {_x isKindOf "Car"});
 }];
