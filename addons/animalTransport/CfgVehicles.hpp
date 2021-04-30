@@ -78,7 +78,7 @@ class GRAD_AnimalTransport {
 
         class I_G_Van_01_transport_F: Van_01_transport_base_F {};
 
-        class RHS_Ural_Civ_Base {
+        class RHS_Ural_Open_Civ_01 {
             unloadPoint[] = {0, -4.1, -0.2};
             unloadActionPoint[] = {0, -3.3, -0.1};
             class Sheep_random_F {
@@ -120,7 +120,56 @@ class GRAD_AnimalTransport {
                 };
             };
         };
-        class RHS_Ural_Open_MSV_01: RHS_Ural_Civ_Base {};
+        class RHS_Ural_Civ_01: RHS_Ural_Open_Civ_01 {};
+        class rhsgref_nat_ural_open: RHS_Ural_Open_Civ_01 {};
+        class rhsgref_nat_ural: RHS_Ural_Open_Civ_01 {};
+        class rhsgref_ins_ural_work_open: RHS_Ural_Open_Civ_01 {};
+        class rhsgref_ins_ural: RHS_Ural_Open_Civ_01 {};
+        class rhsgref_ins_ural_open: RHS_Ural_Open_Civ_01 {};
+        class UK3CB_Ural_Covered: RHS_Ural_Open_Civ_01 {};
+
+        class RHS_Ural_Open_MSV_01 {
+             unloadPoint[] = {0, -3.8, -0.2};
+            unloadActionPoint[] = {0, -3.0, -0.1};
+            class Sheep_random_F {
+                class Spaces {
+                    class FrontLeft {
+                        offset[] = {-0.50, -0.40, -0.20};
+                        cargoIndices[] = {13, 3, 5};
+                    };
+                    class FrontMiddle {
+                        offset[] = {-0.05, -0.40, -0.20};
+                        cargoIndices[] = {};
+                    };
+                    class FrontRight {
+                        offset[] = {0.50, -0.40, -0.20};
+                        cargoIndices[] = {12, 2, 4};
+                    };
+                    class CenterLeft {
+                        offset[] = {-0.50, -1.80, -0.20};
+                        cargoIndices[] = {5, 7, 9};
+                    };
+                    class CenterMiddle {
+                        offset[] = {0.00, -1.90, -0.20};
+                        cargoIndices[] = {};
+                    };
+                    class CenterRight {
+                        offset[] = {0.5, -1.80, -0.20};
+                        cargoIndices[] = {4, 6, 8};
+                    };
+                    class RearRight {
+                        offset[] = {-0.4, -2.30, -0.20};
+                        dir = 90;
+                        cargoIndices[] = {8, 9};
+                    };
+                    class RearLeft {
+                        offset[] = {0.4, -2.7, -0.20};
+                        dir = 270;
+                        cargoIndices[] = {10, 11};
+                    };
+                };
+            };
+        };
 
         class rhs_gaz66o_vmf {
             unloadPoint[] = {0, -3.4, -0.6};
