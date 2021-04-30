@@ -588,5 +588,59 @@ class GRAD_AnimalTransport {
                 };
             };
         };
+
+        class UK3CB_Ikarus {
+            unloadPoint[] = {1.6, 0, -1.1};
+            unloadActionPoint[] = {1, 0, -0.8};
+            class Sheep_Random_F {
+                class Spaces {
+                    class Aisle1 {
+                        offset[] = {0, 3.5, -0.8};
+                        dir = 200;
+                        cargoIndices[] = {};
+                    };
+                    class Aisle2 {
+                        offset[] = {-0.2, 1, -0.8};
+                        dir = 0;
+                        cargoIndices[] = {};
+                    };
+                    class Aisle3 {
+                        offset[] = {-0.5, 0.3, -0.8};
+                        dir = 170;
+                        cargoIndices[] = {20};
+                    };
+                    class Aisle4 {
+                        offset[] = {0, -0.6, -0.8};
+                        dir = 25;
+                        cargoIndices[] = {20};
+                    };
+                    class Aisle5 {
+                        offset[] = {-0.4, -1.1, -0.8};
+                        dir = 90;
+                        cargoIndices[] = {6,10};
+                    };
+                    class Aisle6 {
+                        offset[] = {-0.2, -2.3, -0.8};
+                        dir = 200;
+                        cargoIndices[] = {};
+                    };
+                    class Aisle7 {
+                        offset[] = {0, -3.7, -0.8};
+                        dir = 230;
+                        cargoIndices[] = {9, 21, 22};
+                    };
+                    class Aisle8 {
+                        offset[] = {-0.6, -4.65, -0.8};
+                        dir = 80;
+                        cargoIndices[] = {22};
+                    };
+                    class Aisle9 {
+                        offset[] = {0.1, -5.2, -0.8};
+                        dir = 260;
+                        cargoIndices[] = {19};
+                    };
+                };
+            };
+        };
     };
 };
