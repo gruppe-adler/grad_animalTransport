@@ -590,8 +590,23 @@ class GRAD_AnimalTransport {
         };
 
         class UK3CB_Ikarus {
-            unloadPoint[] = {1.6, 0, -1.1};
-            unloadActionPoint[] = {1, 0, -0.8};
+            class LoadingPoints {
+                class Front {
+                    actionOffset[] = {1.15, 3.95, -0.8};
+                    dropOffset[] = {1.7, 4, -1.1};
+                    dropDir = 90;
+                };
+                class Center {
+                    actionOffset[] = {1.15, -0.05, -0.8};
+                    dropOffset[] = {1.7, 0, -1.1};
+                    dropDir = 90;
+                };
+                class Rear {
+                    actionOffset[] = {1.15, -4.65, -0.8};
+                    dropOffset[] = {1.7, -4.6, -1.1};
+                    dropDir = 90;
+                };
+            };
             class Sheep_Random_F {
                 class Spaces {
                     class Aisle1 {
