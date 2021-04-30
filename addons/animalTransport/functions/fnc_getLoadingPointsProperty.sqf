@@ -22,9 +22,9 @@ private _propertyValues = createHashMapFromArray (("true" configClasses (_custom
 });
 
 private _unnamedPropertyName = switch (_propertyName) do {
-	case "actionOffset": ["unloadActionPoint", []];
-	case "dropDir": ["dropDir", 180];
-	case "dropOffset": ["unloadPoint", []];	
+	case "actionOffset": {["unloadActionPoint", []]};
+	case "dropDir": {["dropDir", 180]};
+	case "dropOffset": {["unloadPoint", []]};	
 	default {};
 };
 private _unnamedDropOffset = [
