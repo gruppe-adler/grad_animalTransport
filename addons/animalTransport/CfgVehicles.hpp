@@ -76,48 +76,13 @@ class GRAD_AnimalTransport {
             };
         };
 
-        class I_G_Van_01_transport_F { /* NOTE: same as Van_01_transport_base_F above! */
-            unloadPoint[] = {0, -4.2, -0.6};
-            unloadActionPoint[] = {0, -3.4, -0.4};
-            class Sheep_random_F {
-                class Spaces {
-                    class FrontOuterLeft {
-                        offset[] = {-0.7, -1.4, -0.6};
-                        cargoIndices[] = {2, 4};
-                    };
-                    class FrontInnerLeft {
-                        offset[] = {-0.25, -1.6, -0.6};
-                        cargoIndices[] = {2, 4};
-                    };
-                    class FrontInnerRight {
-                        offset[] = {0.2, -1.4, -0.6};
-                        cargoIndices[] = {3, 5};
-                    };
-                    class FrontOuterRight {
-                        offset[] = { 0.65, -1.6, -0.6};
-                        cargoIndices[] = {3, 5};
-                    };
-                    class BackOuterRight {
-                        offset[] = { 0.7, -3.0, -0.6};
-                        cargoIndices[] = {7, 9,11};
-                    };
-                    class BackInnerRight {
-                        offset[] = { 0.25, -2.8, -0.6};
-                        cargoIndices[] = {7, 9,11};
-                    };
-                    class BackInnerLeft {
-                        offset[] = { -0.2, -3.0, -0.6};
-                        cargoIndices[] = {6, 8, 10};
-                    };
-                    class BackOuterLeft {
-                        offset[] = { -0.65, -2.8, -0.6};
-                        cargoIndices[] = {6, 8, 10};
-                    };
-                };
-            };
-        };
+        class I_G_Van_01_transport_F: Van_01_transport_base_F {};
 
-        class RHS_Ural_Civ_Base {
+        /*
+            NOTE: RHS Ural4320 class tree is awfully, horrendously fucked. There's two variants 
+                  that differ in their model center being offset by 30cm but look the same from outside.
+        */
+        class RHS_Ural_Open_Civ_01 {
             unloadPoint[] = {0, -4.1, -0.2};
             unloadActionPoint[] = {0, -3.3, -0.1};
             class Sheep_random_F {
@@ -153,6 +118,56 @@ class GRAD_AnimalTransport {
                     };
                     class RearLeft {
                         offset[] = {0.4, -3.0, -0.20};
+                        dir = 270;
+                        cargoIndices[] = {10, 11};
+                    };
+                };
+            };
+        };
+        class RHS_Ural_Civ_01: RHS_Ural_Open_Civ_01 {};
+        class rhsgref_nat_ural_open: RHS_Ural_Open_Civ_01 {};
+        class rhsgref_nat_ural: RHS_Ural_Open_Civ_01 {};
+        class rhsgref_ins_ural_work_open: RHS_Ural_Open_Civ_01 {};
+        class rhsgref_ins_ural: RHS_Ural_Open_Civ_01 {};
+        class rhsgref_ins_ural_open: RHS_Ural_Open_Civ_01 {};
+        class UK3CB_Ural_Covered: RHS_Ural_Open_Civ_01 {};
+
+        class RHS_Ural_Open_MSV_01 {
+             unloadPoint[] = {0, -3.8, -0.2};
+            unloadActionPoint[] = {0, -3.0, -0.1};
+            class Sheep_random_F {
+                class Spaces {
+                    class FrontLeft {
+                        offset[] = {-0.50, -0.40, -0.20};
+                        cargoIndices[] = {13, 3, 5};
+                    };
+                    class FrontMiddle {
+                        offset[] = {-0.05, -0.40, -0.20};
+                        cargoIndices[] = {};
+                    };
+                    class FrontRight {
+                        offset[] = {0.50, -0.40, -0.20};
+                        cargoIndices[] = {12, 2, 4};
+                    };
+                    class CenterLeft {
+                        offset[] = {-0.50, -1.80, -0.20};
+                        cargoIndices[] = {5, 7, 9};
+                    };
+                    class CenterMiddle {
+                        offset[] = {0.00, -1.90, -0.20};
+                        cargoIndices[] = {};
+                    };
+                    class CenterRight {
+                        offset[] = {0.5, -1.80, -0.20};
+                        cargoIndices[] = {4, 6, 8};
+                    };
+                    class RearRight {
+                        offset[] = {-0.4, -2.30, -0.20};
+                        dir = 90;
+                        cargoIndices[] = {8, 9};
+                    };
+                    class RearLeft {
+                        offset[] = {0.4, -2.7, -0.20};
                         dir = 270;
                         cargoIndices[] = {10, 11};
                     };
@@ -239,9 +254,9 @@ class GRAD_AnimalTransport {
                 };
             };
         };
-        class Truck_02_transport_base_F { /*Zamak open with benches*/
+        class Truck_02_transport_base_F { /*Zamak/Kamaz open with benches*/
             unloadPoint[] = {0, -4.3, -0.2};
-            unloadActionPoint[] = {0, -3.5, -0.1};
+            unloadActionPoint[] = {0, -3.6, -0.2};
             class Sheep_random_F {
                 class Spaces {
                     class FrontCenter  {
@@ -303,6 +318,272 @@ class GRAD_AnimalTransport {
                         //    offset[] = {-0.3, -0.2, -0.3};
                         //    dir = {{1,0,0}, {0,-1,0}};
                         cargoIndices[] = {0};
+                    };
+                };
+            };
+        };
+
+        class UK3CB_Hilux_Open {
+            unloadPoint[] = {0, -3.3, -0.2};
+            unloadActionPoint[] = {0, -2.4, -0.1};
+            class Sheep_random_F {
+                class Spaces {
+                    class Front  {
+                        offset[] = {-0.4, -0.4, -0.7};
+                        dir = 90;
+                        cargoIndices[] = {5};
+                    };
+                    class Center  {
+                        offset[] = {-0.3, -0.7, -0.7};
+                        dir = 135;
+                        cargoIndices[] = {};
+                    };
+                    class Back {
+                        offset[] = {0.4, -1.8, -0.7};
+                        dir = 270;
+                        cargoIndices[] = {3, 4};
+                    };
+                };
+            };
+        };
+        class UK3CB_Datsun_Open: UK3CB_Hilux_Open {};
+
+        class UK3CB_V3S_Open {
+            unloadPoint[] = {0, -4.1, -0.7};
+            unloadActionPoint[] = {0, -3.3, -0.7};
+            class Sheep_random_F {
+                class Spaces {
+                    class First {
+                        offset[] = {-0.4, 0.5, -.7};
+                        dir = 90;
+                        cargoIndices[] = {9, 10}; //yes! frontmost seats are 9,10!
+                    };
+                    class Second {
+                        offset[] = {0.4, 0, -.7};
+                        dir = 270;
+                        cargoIndices[] = {1, 2};
+                    };
+                    class Third {
+                        offset[] = {-0.4, -0.5, -.7};
+                        dir = 90;
+                        cargoIndices[] = {1, 2};
+                    };
+                    class Fourth {
+                        offset[] = {0.4, -1, -.7};
+                        dir = 270;
+                        cargoIndices[] = {3, 4};
+                    };
+                    class Fifth {
+                        offset[] = {-0.4, -1.5, -.7};
+                        dir = 90;
+                        cargoIndices[] = {5, 6};
+                    };
+                    class Sixth {
+                        offset[] = {0.4, -2, -.7};
+                        dir = 270;
+                        cargoIndices[] = {};
+                    };
+                    class Seventh {
+                        offset[] = {-0.4, -2.5, -.7};
+                        dir = 90;
+                        cargoIndices[] = {7, 8};
+                    };
+                    class Eighth {
+                        offset[] = {0.4, -3, -.7};
+                        dir = 270;
+                        cargoIndices[] = {11, 12};
+                    };
+                };
+            };
+
+        };
+
+    class UK3CB_LandRover { /*note: base classes of the armed variants do have the armament in the class name*/
+            unloadPoint[] = {0, -2.6, -0.7};
+            unloadActionPoint[] = {0, -2.1, -0.3};
+            class Sheep_Random_F {
+                class Spaces {
+                    class Front {
+                        offset[] = {0.05, -0.8, -.7};
+                        dir = -8;
+                        cargoIndices[] = {2, 3, 4, 5};
+                    };
+                    class Back {
+                        offset[] = {-0.05, -1.2, -.7};
+                        dir = 172;
+                        cargoIndices[] = {0, 1, 4, 5};
+                    };
+                };
+
+            };
+        };
+
+        class UK3CB_S1203 {
+            unloadPoint[] = {0, -2.0, -0.7};
+            unloadActionPoint[] = {0, -1.6, -0.1};
+            class Sheep_Random_F {
+                class Spaces {
+                    class Left {
+                        offset[] = {-0.45, -0.2, -0.7};
+                        dir = 180;
+                        cargoIndices[] = {3};
+                    };
+                    class Center {
+                        offset[] = {0, -0.2, -0.7};
+                        dir = 180;
+                        cargoIndices[] = {3, 4};
+                    };
+                    class Right {
+                        offset[] = {0.45, -0.2, -0.7};
+                        dir = 180;
+                        cargoIndices[] = {4};
+                    };
+                };
+            };
+        };
+
+        class UK3CB_S1203_Ambulance {
+            unloadPoint[] = {0, -2.0, -0.7};
+            unloadActionPoint[] = {0, -1.6, -0.1};
+            class Sheep_Random_F {
+                class Spaces {
+                    class Left {
+                        offset[] = {-0.2, -1, -0.35};
+                        dir[] = {{0,1,0}, {1,0,0}};
+                        cargoIndices[] = {2};
+                    };
+                    class Right {
+                        offset[] = {0.2, -1, -0.35};
+                        dir[] = {{0,1,0}, {-1,0,0}};
+                        cargoIndices[] = {1};
+                    };
+                };
+            };
+        };
+
+        class RHS_UAZ_Open_Base {
+            unloadPoint[] = {0, -2.2, 0};
+            unloadActionPoint[] = {0, -1.6, 0};
+            class Sheep_Random_F {
+                class Spaces {
+                    class Front {
+                        offset[] = {-0.55, -0.2, -0.7};
+                        dir = 90;
+                        cargoIndices[] = {1, 3, 4};
+                    };
+                };
+            };
+        };
+
+
+        class UK3CB_V3S_Recovery {
+            unloadPoint[] = {0, -4.3, -0.6};
+            unloadActionPoint[] = {0, -3.7, -0.3};
+            class Sheep_Random_F {
+                class Spaces {
+                    class Left1 {
+                        offset[] = { 0.55, 1.2, -.6 };
+                        dir = 90;
+                    };
+                    class Right1 {
+                        offset[] = {-0.55, 1.2, -.6 };
+                        dir = 270;
+                    };
+                    class Left2 {
+                        offset[] = { 0.55, 0.75, -.6 };
+                        dir = 90;
+                    };
+                    class Right2 {
+                        offset[] = {-0.55, 0.75, -.6 };
+                        dir = 270;
+                    };
+                    class Left3 {
+                        offset[] = { 0.55, 0.3, -.6 };
+                        dir = 90;
+                    };
+                    class Right3 {
+                        offset[] = {-0.55, 0.3, -.6 };
+                        dir = 270;
+                    };
+                    class Left4 {
+                        offset[] = { 0.55, -0.15, -.6 };
+                        dir = 90;
+                    };
+                    class Right4 {
+                        offset[] = {-0.55, -0.15, -.6 };
+                        dir = 270;
+                    };
+                    class Left5 {
+                        offset[] = { 0.55, -0.6, -.6 };
+                        dir = 90;
+                    };
+                    class Right5 {
+                        offset[] = {-0.55, -0.6, -.6 };
+                        dir = 270;
+                    };
+                    class Left6 {
+                        offset[] = { 0.55, -1.05, -.6 };
+                        dir = 90;
+                    };
+                    class Right6 {
+                        offset[] = {-0.55, -1.05, -.6 };
+                        dir = 270;
+                    };
+                    class Left7 {
+                        offset[] = { 0.55, -1.5, -.6 };
+                        dir = 90;
+                    };
+                    class Right7 {
+                        offset[] = {-0.55, -1.5, -.6 };
+                        dir = 270;
+                    };
+                    class Left8 {
+                        offset[] = { 0.55, -1.95, -.6 };
+                        dir = 90;
+                    };
+                    class Right8 {
+                        offset[] = {-0.55, -1.95, -.6 };
+                        dir = 270;
+                    };
+                    class Left9 {
+                        offset[] = { 0.55, -2.4, -.6 };
+                        dir = 90;
+                    };
+                    class Right9 {
+                        offset[] = {-0.55, -2.4, -.6 };
+                        dir = 270;
+                    };
+                    class Left10 {
+                        offset[] = { 0.55, -2.85, -.6 };
+                        dir = 90;
+                    };
+                    class Right10 {
+                        offset[] = {-0.55, -2.85, -.6 };
+                        dir = 270;
+                    };
+                    class Left11 {
+                        offset[] = { 0.55, -3.3, -.6 };
+                        dir = 90;
+                    };
+                    class Right11 {
+                        offset[] = {-0.55, -3.3, -.6 };
+                        dir = 270;
+                    };
+                    class Center1 {
+                        offset[] = { 0, 0.5, -.6 };
+                        dir = 0;
+                    };
+                    class Center2 {
+                        offset[] = { 0, -0.9, -.6 };
+                        dir = 0;
+                    };
+                    class Center3 {
+                        offset[] = { 0, -1.3, -.6 };
+                        dir = 180;
+                    };
+                    class Center4 {
+                        offset[] = { 0, -2.8, -.6 };
+                        dir = 180;
                     };
                 };
             };
