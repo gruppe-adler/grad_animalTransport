@@ -5,18 +5,8 @@ LOG("postClientInit");
 if (!hasInterface) exitWith {};
 
 {    
-    private _containerConfig = _x;
-    
-    private _loadingPoints = createHashMapFromArray (("true" configClasses (_containerConfig >> "LoadingPoints")) 
-        apply {[
-            configName _x, 
-            ([_x, "actionOffset", [0, 0, 0]] call BIS_fnc_returnConfigEntry)
-        ]});
-
-    private _unnamedActionPoint = ([_containerConfig, "unloadActionPoint", []] call BIS_fnc_returnConfigEntry);
-    if (_unnamedActionPoint isNotEqualTo []) then {
-        _loadingPoints set ["", _unnamedActionPoint];
-    };
+    private _containerConfig = _x;    
+    private _loadingPoints = [_containerConfig] call FUNC(getActionOffsets);
 
     {        
         [configName _containerConfig, _y, _x] call FUNC(addUnloadActionPoint);    
