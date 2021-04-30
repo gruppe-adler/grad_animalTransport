@@ -78,6 +78,10 @@ class GRAD_AnimalTransport {
 
         class I_G_Van_01_transport_F: Van_01_transport_base_F {};
 
+        /*
+            NOTE: RHS Ural4320 class tree is awfully, horrendously fucked. There's two variants 
+                  that differ in their model center being offset by 30cm but look the same from outside.
+        */
         class RHS_Ural_Open_Civ_01 {
             unloadPoint[] = {0, -4.1, -0.2};
             unloadActionPoint[] = {0, -3.3, -0.1};
@@ -344,8 +348,6 @@ class GRAD_AnimalTransport {
         };
         class UK3CB_Datsun_Open: UK3CB_Hilux_Open {};
 
-        // class UK3CB_UN_I_Ural_Open: RHS_Ural_Civ_Base {}; // TODO
-
         class UK3CB_V3S_Open {
             unloadPoint[] = {0, -4.1, -0.7};
             unloadActionPoint[] = {0, -3.3, -0.7};
@@ -460,7 +462,6 @@ class GRAD_AnimalTransport {
         };
 
         class RHS_UAZ_Open_Base {
-        // class UK3CB_UAZ_Open_Base {
             unloadPoint[] = {0, -2.2, 0};
             unloadActionPoint[] = {0, -1.6, 0};
             class Sheep_Random_F {
