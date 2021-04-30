@@ -1,5 +1,5 @@
 #include "script_component.hpp"
 
-params ["_target"];
+params ["_target", "_player", "_params"];
 
-[_target] call FUNC(player_unloadAnimals);
+[_target, _params#0] call FUNC(player_unloadAnimals);
