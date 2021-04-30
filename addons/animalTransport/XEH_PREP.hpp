@@ -1,3 +1,4 @@
+PREP(addUnloadActionPoint);
 PREP(controlAnimal);
 PREP(findSuitableSpace);
 PREP(findSuitableSpaces);
@@ -5,6 +6,10 @@ PREP(findSuitableVehicle);
 PREP(findSuitableVehicles);
 PREP(findTransportsInLoadingRange);
 PREP(getCustomConfig);
+PREP(getActionOffsets);
+PREP(getDropDirs);
+PREP(getDropOffsets);
+PREP(getLoadingPointsProperty);
 PREP(getSupportedAnimalConfigs);
 PREP(getSupportedContainerConfigs);
 PREP(interact_loadAction);

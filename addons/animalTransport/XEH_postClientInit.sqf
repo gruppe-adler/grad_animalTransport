@@ -4,25 +4,12 @@ LOG("postClientInit");
 
 if (!hasInterface) exitWith {};
 
-{
-    private _unloadActionPoint = ([_x, "unloadActionPoint", [0, 0, 0]] call BIS_fnc_returnConfigEntry);
-    private _positionedUnloadAction = [
-        QGVAR(unloadAction),
-        "unload animals",
-        "",
-        FUNC(interact_unloadAction),
-        FUNC(interact_unloadCondition),
-        FUNC(interact_unloadChildren),
-        [],
-        _unloadActionPoint,
-        2.5
-    ] call ace_interact_menu_fnc_createAction;
+{    
+    private _containerConfig = _x;    
+    private _loadingPoints = [_containerConfig] call FUNC(getActionOffsets);
 
-    [
-        configName _x,
-        0,
-        [],
-        _positionedUnloadAction,
-        true
-    ] call ace_interact_menu_fnc_addActionToClass;
+    {        
+        [configName _containerConfig, _y, _x] call FUNC(addUnloadActionPoint);    
+    } forEach _loadingPoints;
+
 } forEach ([] call FUNC(getSupportedContainerConfigs));

@@ -2,6 +2,7 @@
 
 params [
     ["_animal", objNull, [objNull]],
+    ["_loadingPointName", "", [""]],
     ["_instigator", objNull, [objNull]]
 ];
 
@@ -26,7 +27,7 @@ private _seatsOccupiedByMe = [];
         _seatsOccupiedByOthers = _seatsOccupiedByOthers + _cargoIndices;
         true
     } else {
-        [_vehicle, _animal] call FUNC(vehicle_unloadAnimalDetach);
+        [_vehicle, _animal, _loadingPointName] call FUNC(vehicle_unloadAnimalDetach);
         [QGVAR(animal_unloaded), [_vehicle, _animal, _instigator]] call CBA_fnc_localEvent;
         _seatsOccupiedByMe = _cargoIndices;
         false
