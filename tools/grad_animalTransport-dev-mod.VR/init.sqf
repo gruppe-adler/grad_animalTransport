@@ -11,18 +11,18 @@
 
 	{
 		private _opacity = 1;
-		private _text = "o";
+		private _text = "";
 
-		private _diff = (getPosASL _x) vectorDiff _camPos;
-		private _civAngle = acos (_camDir vectorCos _diff);
+		//private _diff = (getPosASL _x) vectorDiff _camPos;
+		//private _civAngle = acos (_camDir vectorCos _diff);
 
-		private _fov = deg getObjectFOV ACE_player;
+		//private _fov = deg getObjectFOV ACE_player;
 
-		if (_civAngle < _fov) then {
+		//if (_civAngle < _fov) then {
             if (vehicle _x isNotEqualTo _x) then {
                 _text = format ["%1", (vehicle _x) getCargoIndex _x];
             };
-		};
+		//};
 
 		private _color = [0.8, 0, 1, _opacity]; // colorCivilian is too dark for text :/
 
@@ -97,16 +97,19 @@ markunloadactionID = player addAction ["mark unload action & points", {
 	player removeAction markunloadactionID;
 	{
 		private _car = _x;
-
-		private _sphere = createSimpleObject ["Sign_Sphere25cm_F", [0, 0, 0], true];
-		private _cfg = [_car] call grad_animalTransport_fnc_getCustomConfig;
-		if (isNull _cfg) then {
+		private _actionOffsets = [_car] call grad_animalTransport_fnc_getActionOffsets;
+		if (count _actionOffsets == 0) then {
 			diag_log format ["no custom config for %1", typeOf _car];
-		} else {
-			diag_log format ["attaching helper sphere to %1", typeOf _car];
-			private _offset = getArray (_cfg >> "unloadActionPoint");
-			_sphere attachTo [_car, _offset];
 		};
-
+		{
+			private _sphere = createSimpleObject ["Sign_Sphere25cm_F", [0, 0, 0], true];
+			diag_log format ["attaching helper sphere to %1", typeOf _car];
+			_sphere attachTo [_car, _y];
+		} forEach _actionOffsets;
 	} forEach (vehicles select {_x isKindOf "Car"});
 }];
+
+/*max passengers: ikarus, 24*/
+for "_i" from 1 to 24 do {
+    sitters createUnit ["C_Man_Fisherman_01_F", getPos leader sitters, [], 0, "CAN_COLLIDE"];
+};
