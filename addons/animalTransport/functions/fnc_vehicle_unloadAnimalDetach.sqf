@@ -16,10 +16,10 @@ if (_loadingPointName == "") then {
     ] call BIS_fnc_returnConfigEntry;
 } else {
     private _config = ([_vehicle] call FUNC(getCustomConfig)) >> "LoadingPoints" >> _loadingPointName;
-    _dropDir = _config,
+    _dropDir = [_config,
         "dropDir",
         180
-    ] call BIS_fnc_returnConfigEntry;;
+    ] call BIS_fnc_returnConfigEntry;
     _dropOffset = [
         _config,
         "dropOffset",

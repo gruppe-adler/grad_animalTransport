@@ -1,7 +1,8 @@
 #include "script_component.hpp"
 
 params [
-    ["_vehicle", objNull, [objNull]]
+    ["_vehicle", objNull, [objNull]],
+    ["_loadingPointName", "", [""]]
 ];
 
 if (isNull _vehicle) exitWith { ERROR("arrgh vic is null"); };
@@ -20,7 +21,8 @@ player setVariable [QGVAR(lastUnloadTime), 0];
 [
     (_totalCount / GVAR(unloadSpeed)) + 1,
     [ // callback arguments
-        ([_animals] call cba_fnc_hashValues)
+        ([_animals] call cba_fnc_hashValues),
+        _loadingPointName
     ],
     { // onFinish
         LOG("unloading finished");
@@ -33,7 +35,8 @@ player setVariable [QGVAR(lastUnloadTime), 0];
     {
         params ["_args", "_elapsedTime", "_totalTime", "_errorCode"];
         _args params [
-            ["_animals", [], [[]]]
+            ["_animals", [], [[]]],
+            ["_loadingPointName", "", [""]]
         ];
         private _lastUnloadTime = player getVariable [QGVAR(lastUnloadTime), 0];
         private _timeToUnload = ((_elapsedTime - _lastUnloadTime) * GVAR(unloadSpeed)) > 1;
@@ -45,7 +48,7 @@ player setVariable [QGVAR(lastUnloadTime), 0];
         if (_animalIndex == -1) exitWith {false};
 
         private _animal = (_animals select _animalIndex);
-        [QGVAR(vehicle_unloadAnimal), [_animal, player], attachedTo _animal] call CBA_fnc_targetEvent;
+        [QGVAR(vehicle_unloadAnimal), [_animal, _loadingPointName, player], attachedTo _animal] call CBA_fnc_targetEvent;
         player setVariable [QGVAR(lastUnloadTime), _elapsedTime];
         _animals set [_animalIndex, objNull]; // remember: arrays are mutable, we're editing the same copy over and over
         true

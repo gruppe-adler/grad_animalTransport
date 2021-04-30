@@ -2,7 +2,8 @@
 
 params [
 	["_vehicleConfigName", "", [""]],
-	["_unloadActionPoint", [0, 0, 0], [[]]]
+	["_unloadActionPoint", [0, 0, 0], [[]]],
+	["_loadingPointName", "", [""]]
 ];
 
 private _positionedUnloadAction = [
@@ -12,7 +13,7 @@ private _positionedUnloadAction = [
 	FUNC(interact_unloadAction),
 	FUNC(interact_unloadCondition),
 	FUNC(interact_unloadChildren),
-	[],
+	[_loadingPointName],
 	_unloadActionPoint,
 	2.5
 ] call ace_interact_menu_fnc_createAction;

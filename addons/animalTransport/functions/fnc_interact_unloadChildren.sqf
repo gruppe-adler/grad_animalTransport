@@ -1,6 +1,10 @@
 #include "script_component.hpp"
 
-params ["_target"];
+params ["_target", "_player", "_params"];
+
+_params params [
+    ["_loadingPointName", "", [""]]
+];
 
 private _animals = (_target getVariable [QGVAR(animals), ([] call cba_fnc_hashCreate)]);
 ([_animals] call CBA_fnc_hashKeys)
@@ -16,7 +20,7 @@ private _animals = (_target getVariable [QGVAR(animals), ([] call cba_fnc_hashCr
             },
             {true},
             {},
-            _animal
+            [_animal, _loadingPointName, _player]
         ] call ace_interact_menu_fnc_createAction);
     } apply {
         [_x, [], _target]
