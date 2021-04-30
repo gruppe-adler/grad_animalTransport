@@ -16,7 +16,8 @@ private _animals = (_target getVariable [QGVAR(animals), ([] call cba_fnc_hashCr
             "", // icon
             {
                 params ["", "_player", "_params"];
-                [QGVAR(vehicle_unloadAnimal), _params, (attachedTo _params)] call CBA_fnc_targetEvent;
+                _params params ["_animal", "", ""];
+                [QGVAR(vehicle_unloadAnimal), _params, (attachedTo _animal)] call CBA_fnc_targetEvent;
             },
             {true},
             {},
