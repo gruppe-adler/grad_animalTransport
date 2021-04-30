@@ -71,7 +71,8 @@ player addAction ["fill my vic with sheep", {
 
 }, [], 2, true, true, "", "call " + str {vehicle player != player}];
 
-player addAction ["fill all vics with sheep", {
+fillallvicswithsheepactionID = player addAction ["fill all vics with sheep", {
+	player removeAction fillallvicswithsheepactionID;
 	{
 	    _x call mission_vehicleFillWithAnimals;
 	} forEach (vehicles select {_x isKindOf "Car"});
@@ -80,14 +81,16 @@ player addAction ["fill all vics with sheep", {
 mission_printParents = {
 	private _vehicle = _this;
 	private _config = configOf _vehicle;
-	private _str = "";
+	private _classNames = [];
 	while {!(isNull _config)} do {
-		_str = format ["%1 > %2", _str, configName _config];
+		_classNames pushBack (configName _config);
 		_config = inheritsFrom _config;
 		if (configName _config == "Car") exitWith {};
 	};
-	systemChat _str;
-	diag_log _str;
+	reverse _classNames;
+	systemChat (_classNames joinString " > ");
+	diag_log (_classNames joinString " > ");
+	_classNames;
 };
 
 markunloadactionID = player addAction ["mark unload action & points", {

@@ -8,18 +8,18 @@ class EditorData
 	toggles=513;
 	class ItemIDProvider
 	{
-		nextID=101;
+		nextID=156;
 	};
 	class MarkerIDProvider
 	{
-		nextID=2;
+		nextID=4;
 	};
 	class Camera
 	{
-		pos[]={5258.6523,41.381317,6863.1304};
-		dir[]={-0.0083842175,-0.87830859,0.47802612};
-		up[]={-0.015402826,0.4780885,0.87817448};
-		aside[]={0.99984914,-2.6193447e-008,0.017536001};
+		pos[]={5217.7749,128.7383,6809.7134};
+		dir[]={0.01052385,-0.92576486,0.37795359};
+		up[]={0.025767284,0.37809947,0.92540634};
+		aside[]={0.99961269,0,-0.027833508};
 	};
 };
 binarizationWanted=0;
@@ -57,13 +57,25 @@ addons[]=
 	"UK3CB_Factions_ADR_O",
 	"UK3CB_Factions_ADM_O",
 	"UK3CB_Factions_UN_B",
-	"UK3CB_Factions_Vehicles_V3S"
+	"UK3CB_Factions_Vehicles_V3S",
+	"UK3CB_Factions_TKP_I",
+	"rhs_c_a2port_car",
+	"rhsgref_c_vehicles_ret",
+	"ace_compat_rhs_afrf3",
+	"UK3CB_Factions_CW_SOV_O_LATE",
+	"UK3CB_Factions_TKC_O",
+	"UK3CB_Factions_ADG_O",
+	"UK3CB_Factions_CHC_I",
+	"UK3CB_Factions_ADG_I",
+	"UK3CB_Factions_Vehicles_Ural",
+	"UK3CB_Factions_TKA_B",
+	"UK3CB_Factions_ADG_B"
 };
 class AddonsMetaData
 {
 	class List
 	{
-		items=21;
+		items=30;
 		class Item0
 		{
 			className="A3_Characters_F";
@@ -211,13 +223,77 @@ class AddonsMetaData
 			author="3 Commando Brigade";
 			url="www.3commandobrigade.com";
 		};
+		class Item21
+		{
+			className="UK3CB_Factions_TKP";
+			name="3CB Factions - TKP";
+			author="3 Commando Brigade";
+			url="www.3commandobrigade.com";
+		};
+		class Item22
+		{
+			className="rhs_c_a2port_car";
+			name="A2 ported cars";
+			author="Red Hammer Studios";
+			url="http://www.rhsmods.org/";
+		};
+		class Item23
+		{
+			className="rhsgref_c_vehicles_ret";
+			name="GREF Vehicle Retextures";
+			author="Red Hammer Studios";
+			url="http://www.rhsmods.org/";
+		};
+		class Item24
+		{
+			className="ace_compat_rhs_afrf3";
+			name="ACE3 - RHS AFRF Compatibility";
+			author="ACE-Team";
+			url="http://ace3mod.com/";
+		};
+		class Item25
+		{
+			className="UK3CB_Factions_CW_SOV";
+			name="3CB Factions - CW_SOV";
+			author="3 Commando Brigade";
+			url="www.3commandobrigade.com";
+		};
+		class Item26
+		{
+			className="UK3CB_Factions_ADG";
+			name="3CB Factions - ADG";
+			author="3 Commando Brigade";
+			url="www.3commandobrigade.com";
+		};
+		class Item27
+		{
+			className="UK3CB_Factions_CHC";
+			name="3CB Factions - CHC";
+			author="3 Commando Brigade";
+			url="www.3commandobrigade.com";
+		};
+		class Item28
+		{
+			className="UK3CB_Factions_Vehicles_Ural";
+			name="3CB Factions - Vehicles";
+			author="3 Commando Brigade";
+			url="www.3commandobrigade.com";
+		};
+		class Item29
+		{
+			className="UK3CB_Factions_TKA";
+			name="3CB Factions - TKA";
+			author="3 Commando Brigade";
+			url="www.3commandobrigade.com";
+		};
 	};
 };
 dlcs[]=
 {
 	"UK3CB_Factions",
 	"ORANGE",
-	"RHS_AFRF"
+	"RHS_AFRF",
+	"RHS_GREF"
 };
 randomSeed=12992068;
 class ScenarioData
@@ -247,7 +323,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=48;
+		items=85;
 		class Item0
 		{
 			dataType="Group";
@@ -260,7 +336,7 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={5256.3901,5.0014391,6892.7744};
+						position[]={5170.9854,5.0014391,6978.9409};
 					};
 					side="Civilian";
 					flags=7;
@@ -1261,6 +1337,8 @@ class Mission
 			text="UK3CB - 3CB Factions";
 			markerType="RECTANGLE";
 			type="rectangle";
+			colorName="ColorBlue";
+			alpha=0.50269896;
 			a=50;
 			b=50;
 			id=74;
@@ -1654,6 +1732,554 @@ class Mission
 			};
 			id=100;
 			type="UK3CB_B_G_V3S_Recovery";
+		};
+		class Item48
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={5272.5269,6.2455792,6883.3315};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+			};
+			id=108;
+			type="UK3CB_TKP_I_UAZ_Open";
+		};
+		class Item49
+		{
+			dataType="Marker";
+			position[]={5149.7349,5,6949.627};
+			name="marker_2";
+			text="RHS";
+			markerType="RECTANGLE";
+			type="rectangle";
+			colorName="ColorGreen";
+			alpha=0.49989951;
+			a=50;
+			b=50;
+			id=110;
+		};
+		class Item50
+		{
+			dataType="Marker";
+			position[]={5149.7354,5,6935.2949};
+			name="marker_3";
+			text="RHS";
+			type="mil_dot";
+			id=111;
+		};
+		class Item51
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={5146.8457,6.9100766,6998.3701};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+			};
+			id=112;
+			type="RHS_Ural_Open_VDV_01";
+		};
+		class Item52
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={5147.2822,6.9100766,6988.7456};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+			};
+			id=113;
+			type="RHS_Ural_Open_VMF_01";
+		};
+		class Item53
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={5147.1914,6.9100766,6979.0444};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+			};
+			id=114;
+			type="RHS_Ural_Open_VV_01";
+		};
+		class Item54
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={5147.4009,6.9100766,6967.853};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+			};
+			id=116;
+			type="rhsgref_ins_ural_open";
+		};
+		class Item55
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={5147.5459,6.9100766,6957.3984};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+			};
+			id=121;
+			type="rhsgref_cdf_ural_open";
+		};
+		class Item56
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={5147.3506,6.9100766,6946.8262};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+			};
+			id=122;
+			type="rhsgref_ins_g_ural_open";
+		};
+		class Item57
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={5154.5576,6.9100766,6957.4907};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+			};
+			id=123;
+			type="rhsgref_nat_ural_open";
+		};
+		class Item58
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={5147.0464,6.9100766,6936.0698};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+			};
+			id=125;
+			type="rhsgref_cdf_b_ural_open";
+		};
+		class Item59
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={5146.52,6.8763156,7007.8164};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+			};
+			id=126;
+			type="rhsgref_cdf_b_ural_Zu23";
+		};
+		class Item60
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={5146.5854,6.9100571,7016.5464};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+			};
+			id=127;
+			type="rhsgref_cdf_b_ural_repair";
+		};
+		class Item61
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={5160.6895,6.9100571,6998.2256};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+			};
+			id=128;
+			type="rhsgref_ins_ural";
+		};
+		class Item62
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={5146.4551,6.9100571,7025.5366};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+			};
+			id=129;
+			type="RHS_Ural_Repair_MSV_01";
+		};
+		class Item63
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={5153.7373,6.9100766,6989.1152};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+			};
+			id=130;
+			type="RHS_Ural_Open_Civ_01";
+		};
+		class Item64
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={5154.1748,6.9100766,6979.3706};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+			};
+			id=131;
+			type="RHS_Ural_Open_Civ_03";
+		};
+		class Item65
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={5160.3154,6.9100571,6988.4282};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+			};
+			id=132;
+			type="RHS_Ural_Civ_01";
+		};
+		class Item66
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={5154.3765,6.9100766,6968.3242};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+			};
+			id=133;
+			type="rhsgref_ins_ural_work_open";
+		};
+		class Item67
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={5213.4194,6.9100766,6875.1387};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+			};
+			id=134;
+			type="UK3CB_CW_SOV_O_LATE_Ural_Open";
+		};
+		class Item68
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={5220.5156,6.9100571,6887.9727};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+			};
+			id=135;
+			type="UK3CB_TKC_O_Ural";
+		};
+		class Item69
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={5154.2988,6.9100766,6998.3096};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+			};
+			id=137;
+			type="rhsgref_ins_ural_open";
+		};
+		class Item70
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={5220.3379,7.1364899,6902.8618};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+			};
+			id=138;
+			type="UK3CB_AAF_O_Ural_Ammo";
+		};
+		class Item71
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={5220.0195,7.1364899,6915.6147};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+			};
+			id=139;
+			type="UK3CB_ADG_O_Ural_Empty_ISL";
+		};
+		class Item72
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={5219.7612,7.1364899,6930.1777};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+			};
+			id=140;
+			type="UK3CB_ADC_O_Ural_Repair";
+		};
+		class Item73
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={5219.4985,7.1364899,6944.3081};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+			};
+			id=141;
+			type="UK3CB_CHC_I_Ural_Empty";
+		};
+		class Item74
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={5220.0698,6.9100766,6958.8501};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+			};
+			id=142;
+			type="UK3CB_ADG_I_Ural_Fuel_ISL";
+		};
+		class Item75
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={5220.5684,7.1364899,6976.0635};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+			};
+			id=144;
+			type="UK3CB_B_Ural_Repair_CDF";
+		};
+		class Item76
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={5220.5527,7.1364899,6991.5708};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+			};
+			id=145;
+			type="UK3CB_TKA_B_Ural_Recovery";
+		};
+		class Item77
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={5221.1387,6.9100571,6875.792};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+			};
+			id=146;
+			type="UK3CB_ADG_O_Ural";
+		};
+		class Item78
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={5213.1196,6.9100766,6849.4785};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+			};
+			id=147;
+			type="UK3CB_ADG_O_Ural_Open_ISL";
+		};
+		class Item79
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={5213.2646,6.9100766,6862.7275};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+			};
+			id=148;
+			type="UK3CB_ADG_O_Ural_Open";
+		};
+		class Item80
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={5221.9272,6.9100571,6863.4497};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+			};
+			id=149;
+			type="UK3CB_ADG_I_Ural_ISL";
+		};
+		class Item81
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={5221.8599,6.9100571,6850.7256};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+			};
+			id=150;
+			type="UK3CB_ADG_I_Ural";
+		};
+		class Item82
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={5213.0854,6.9100766,6838.1924};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+			};
+			id=152;
+			type="UK3CB_ADG_I_Ural_Open";
+		};
+		class Item83
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={5222.248,6.9100571,6838.772};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+			};
+			id=154;
+			type="UK3CB_ADG_B_Ural";
+		};
+		class Item84
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={5213.6665,6.9100766,6827.0894};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+			};
+			id=155;
+			type="UK3CB_ADG_B_Ural_Open";
 		};
 	};
 	class Connections
