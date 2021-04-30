@@ -30,4 +30,4 @@ if (_loadingPointName == "") then {
 _animal attachTo [_vehicle, _dropOffset];
 detach _animal;
 _animal setVariable ["ace_dragging_canCarry", true, true];
-["ace_common_setDir", [_animal, (getDir _vehicle) - _dropDir], _animal] call CBA_fnc_targetEvent;
+["ace_common_setDir", [_animal, (getDir _vehicle) + _dropDir], _animal] call CBA_fnc_targetEvent;
