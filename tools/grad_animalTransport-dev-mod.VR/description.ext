@@ -1,25 +1,5 @@
 
 class GRAD_AnimalTransport {
     class Vehicles {
-
-/*
-
-skoda ambulance :
-
-kopfunter:
-
-xxx = vehicle player;
-sheep = nearestObjects [player, ["Sheep_random_F"], 500];
-(sheep#0) attachTo [xxx, [0.3, -0.9, 0.3]]; (sheep#0) setVectorDirAndUp [[0,1,0], [0,0,-1]];
-(sheep#1) attachTo [xxx, [-0.3, -0.9, 0.3]]; (sheep#1) setVectorDirAndUp [[0,1,0], [0,0,-1]];
-
-seitlich.
-xxx = vehicle player;
-sheep = nearestObjects [player, ["Sheep_random_F"], 500];
-(sheep#0) attachTo [xxx, [-0.2, -1, -0.35]]; (sheep#0) setVectorDirAndUp [[0,1,0], [1,0,0]];
-(sheep#1) attachTo [xxx, [0.2, -1, -0.35]]; (sheep#1) setVectorDirAndUp [[0,1,0], [-1,0,0]];
-
-
-*/
     };
 };
