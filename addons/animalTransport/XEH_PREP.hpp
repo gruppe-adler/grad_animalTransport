@@ -1,3 +1,4 @@
+PREP(addUnloadActionPoint);
 PREP(controlAnimal);
 PREP(findSuitableSpace);
 PREP(findSuitableSpaces);

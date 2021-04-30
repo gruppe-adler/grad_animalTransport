@@ -6,23 +6,5 @@ if (!hasInterface) exitWith {};
 
 {
     private _unloadActionPoint = ([_x, "unloadActionPoint", [0, 0, 0]] call BIS_fnc_returnConfigEntry);
-    private _positionedUnloadAction = [
-        QGVAR(unloadAction),
-        "unload animals",
-        "",
-        FUNC(interact_unloadAction),
-        FUNC(interact_unloadCondition),
-        FUNC(interact_unloadChildren),
-        [],
-        _unloadActionPoint,
-        2.5
-    ] call ace_interact_menu_fnc_createAction;
-
-    [
-        configName _x,
-        0,
-        [],
-        _positionedUnloadAction,
-        true
-    ] call ace_interact_menu_fnc_addActionToClass;
+    [configName _x, _unloadActionPoint] call FUNC(addUnloadActionPoint);
 } forEach ([] call FUNC(getSupportedContainerConfigs));
