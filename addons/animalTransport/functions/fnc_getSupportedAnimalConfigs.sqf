@@ -1,7 +1,7 @@
 #include "script_component.hpp"
 
 if (isNil QGVAR(supportedAnimalConfigs)) then {
-    private _configArrays = [configFile, missionConfigFile] apply {
+    private _configArrays = [missionConfigFile, configFile] apply {
             "true" configClasses (_x >> "GRAD_AnimalTransport" >> "Animals")
     };
 

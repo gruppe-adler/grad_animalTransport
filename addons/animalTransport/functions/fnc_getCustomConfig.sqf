@@ -5,8 +5,8 @@ params [
 private _categoryName = if (_vehicle isKindOf "Animal") then { "Animals" } else { "Vehicles" };
 private _getAnimalTransportConfig = {
     private _classes = [
-        configFile,
-        missionConfigFile
+        missionConfigFile,
+        configFile        
     ] apply {
         _x >> "GRAD_AnimalTransport" >> _categoryName >> configName _this
     } select {
