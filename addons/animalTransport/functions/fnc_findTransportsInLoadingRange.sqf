@@ -10,11 +10,10 @@ private _possibleVehicleClasses = [] call FUNC(getSupportedContainerConfigs); //
 private _possibleVehicleClassNames = _possibleVehicleClasses apply { configName _x};
 (nearestObjects [_animal, _possibleVehicleClassNames, GVAR(loadingRange) + CONTAINER_SIZE_BUFFER, false]) select {
     private _vehicle = _x;
-    private _loadingPointActionOffsets = [_vehicle] call FUNC(getActionOffsets);
-
-    count (_loadingPointActionOffsets select {
-        private _unloadPoint = _x;
+    { // equivalent to JavaScript's [].some
+        private _unloadPoint = _y;
         private _unloadPointWorld = (_vehicle vectorModelToWorld _unloadPoint) vectorAdd (getPos _vehicle);
-        (_animal distance _unloadPointWorld) < GVAR(loadingRange);
-    }) > 0;
+        if ((_animal distance _unloadPointWorld) < GVAR(loadingRange)) exitWith {true};
+        false        
+    } forEach ([_vehicle] call FUNC(getActionOffsets));    
 }
