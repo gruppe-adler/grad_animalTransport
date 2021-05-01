@@ -9,13 +9,11 @@ params [
 private _possibleVehicleClasses = [] call FUNC(getSupportedContainerConfigs); // configured vehicle classes
 private _possibleVehicleClassNames = _possibleVehicleClasses apply { configName _x};
 (nearestObjects [_animal, _possibleVehicleClassNames, GVAR(loadingRange) + CONTAINER_SIZE_BUFFER, false]) select {
-    private _unloadPoint = [
-        [_x] call FUNC(getCustomConfig),
-        "unloadPoint",
-        [0, 0, 0]
-    ] call BIS_fnc_returnConfigEntry;
-
-    private _unloadPointWorld = (_x vectorModelToWorld _unloadPoint) vectorAdd (getPos _x);
-
-    (_animal distance _unloadPointWorld) < GVAR(loadingRange);
+    private _vehicle = _x;
+    { // equivalent to JavaScript's [].some
+        private _unloadPoint = _y;
+        private _unloadPointWorld = (_vehicle vectorModelToWorld _unloadPoint) vectorAdd (getPos _vehicle);
+        if ((_animal distance _unloadPointWorld) < GVAR(loadingRange)) exitWith {true};
+        false        
+    } forEach ([_vehicle] call FUNC(getActionOffsets));    
 }
