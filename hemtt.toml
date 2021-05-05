@@ -1,6 +1,6 @@
 name = "GRAD Animal Transport"
 modname = "grad_animalTransport"
-prefix = "grad"
+prefix = "grad_animalTransport"
 author = "Gruppe Adler"
 files = [
     "Adler_64.paa",
