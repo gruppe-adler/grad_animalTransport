@@ -1,4 +1,4 @@
-#define PREFIX GRAD_ANIMAL_TRANSPORT
+#define PREFIX grad_animalTransport
 #define MAINPREFIX x
 
 #include "script_version.hpp"
