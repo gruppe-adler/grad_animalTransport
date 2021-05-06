@@ -6,7 +6,7 @@ class CfgPatches {
 		name = QUOTE(ADDON);
 		url = "$STR_grad_URL";
 		requiredAddons[] = {
-			"grad_main",
+			"grad_animalTransport_main",
 			"ace_dragging",
 			"a3_animals_f_beta_sheep"
 		};
