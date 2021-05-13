@@ -1,7 +1,7 @@
 #include "script_component.hpp"
 
 params [
-	["_vehicleConfigName", "", [""]],
+	["_vehicleConfigNameOrVehicle", "", ["", objNull]],
 	["_unloadActionPoint", [0, 0, 0], [[]]],
 	["_loadingPointName", "", [""]]
 ];
@@ -18,10 +18,21 @@ private _positionedUnloadAction = [
 	2.5
 ] call ace_interact_menu_fnc_createAction;
 
-[
-	_vehicleConfigName,
-	0,
-	[],
-	_positionedUnloadAction,
-	true
-] call ace_interact_menu_fnc_addActionToClass;
+if (_vehicleConfigNameOrVehicle isEqualType "") then {
+	[
+		_vehicleConfigNameOrVehicle,
+		0,
+		[],
+		_positionedUnloadAction,
+		true
+	] call ace_interact_menu_fnc_addActionToClass;
+} else {
+	[
+		_vehicleConfigNameOrVehicle,
+		0,
+		[],
+		_positionedUnloadAction
+	] call ace_interact_menu_fnc_addActionToObject;
+};
+
+INFO_1("added unload action points to %1",_vehicleConfigNameOrVehicle);
