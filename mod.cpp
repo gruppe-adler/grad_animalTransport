@@ -1,4 +1,4 @@
-name = "GARD Animal Transport";
+name = "GRAD Animal Transport";
 author = "Gruppe Adler";
 picture = "Adler_w_2.paa";
 actionName = "Website";
