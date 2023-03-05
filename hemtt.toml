@@ -3,10 +3,11 @@ modname = "grad_animalTransport"
 prefix = "grad_animalTransport"
 author = "Gruppe Adler"
 files = [
-    "Adler_64.paa",
-    "Adler_w_64.paa",
-    "Adler_w_2.paa",
     "mod.cpp",
+    "logo_active_ca.paa",
+    "logo_ca.paa",
+    "overview_co.paa",
+    "logo_small_ca.paa"
     "LICENSE",
     "README.md"
 ]
